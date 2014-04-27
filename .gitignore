@@ -13,6 +13,8 @@ build
 
 #this project
 *.caf
+*.mp3
+mergecaf.spec
 
 
 # My configurations:

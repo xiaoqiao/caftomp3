@@ -11,6 +11,8 @@ import time
 
 def calcTime(filename):
     timestamp = os.path.getmtime(filename)
+
+
     return time.strftime("%Y%m%d%H%M%S",time.localtime(timestamp)) 
 
 def cafTowav(filename):
@@ -54,9 +56,13 @@ def clean(filename):
         os.remove(deletename2)
 
 def main():
+    print 'start'
     for filename in glob.glob('*.caf'):
         #print calcTime(filename)
+        print 'process'
+        print filename
         featurecode,ftime = cafTowav(filename)
+        print 'merging'
         mergeTwo(featurecode,ftime)
         clean(filename)
 

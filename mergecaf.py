@@ -32,7 +32,8 @@ def mergecafs(featurecode,codeno):
     subprocess.call(theCommand)    
 
 def main():
-    os.mkdir('./converted')
+    if not os.path.exists('./converted'):
+        os.mkdir('./converted')
     files = []
     featuredict = {}
     for filename in glob.glob('*.caf'):
@@ -44,6 +45,10 @@ def main():
     for featurecode in featuredict:
         mergecafs(featurecode,featuredict[featurecode])
     
+    print 'by xiaoqiao@zjut '
+    print 'from hipda with love'
+    print 'press any key to exit'
+    a = raw_input()
 
 
 

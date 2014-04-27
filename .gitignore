@@ -15,6 +15,7 @@ build
 *.caf
 *.mp3
 mergecaf.spec
+./converted
 
 
 # My configurations:

@@ -13,17 +13,11 @@ def calcTime(filename):
     timestamp = os.path.getmtime(filename)
 
 
-
-
-
-
-
-
-
-
     return time.strftime("%Y%m%d%H%M%S",time.localtime(timestamp)) 
 
 def cafTowav(filename):
+    #要考虑到只有单个文件的情况
+
     if 'Mic' in filename:
         ftime = filename.split('-')[1] + '_' + calcTime(filename) 
         wavname = filename[:-4] + '.wav'
@@ -45,6 +39,8 @@ def cafTowav(filename):
         return featurecode,ftime
     else :
         return None,None
+
+
 
 def mergeTwo(featurecode,ftime):
     if featurecode != None:

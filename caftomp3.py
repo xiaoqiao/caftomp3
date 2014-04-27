@@ -13,6 +13,14 @@ def calcTime(filename):
     timestamp = os.path.getmtime(filename)
 
 
+
+
+
+
+
+
+
+
     return time.strftime("%Y%m%d%H%M%S",time.localtime(timestamp)) 
 
 def cafTowav(filename):

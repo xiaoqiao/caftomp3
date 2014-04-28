@@ -14,8 +14,9 @@ build
 #this project
 *.caf
 *.mp3
-mergecaf.spec
 ./converted
+*.ignore
+./converted - ¸±±¾
 
 
 # My configurations:

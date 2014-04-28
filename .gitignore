@@ -14,10 +14,9 @@ build
 #this project
 *.caf
 *.mp3
-./converted
+converted
 *.ignore
-./converted - ¸±±¾
-
+*.spec
 
 # My configurations:
 db.ini

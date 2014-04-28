@@ -20,7 +20,7 @@ def mergecafs(featurecode,codeno):
     #两个文件都存在的情况
     if codeno == 2:
         outname = filename.split('-')[1] + '_' + calcTime(filename) + '.mp3'
-        theCommand = 'ffmpeg.exe -i callMic-'+ featurecode + '.caf -i callSpeaker-' + featurecode + '.caf -filter_complex amix=inputs=2:duration=longest:dropout_transition=3 -ac 2 -ab 64k -f mp3 ./converted/' + outname
+        theCommand = 'ffmpeg.exe -i callMic-'+ featurecode + '.caf -i callSpeaker-' + featurecode + '.caf  -y -filter_complex amix=inputs=2:duration=longest:dropout_transition=3 -ac 2 -ab 64k -f mp3 ./converted/' + outname
     #只有一个文件的情况，分别判断是哪一个存在
     if codeno == 1:
         if os.path.exists(filename):
@@ -28,7 +28,7 @@ def mergecafs(featurecode,codeno):
         else :
             filename = 'callSpeaker-' + featurecode + '.caf'
         outname = filename.split('-')[1] + '_' + calcTime(filename) + '.mp3'
-        theCommand = 'ffmpeg.exe -i ' + filename + ' -filter_complex amix=inputs=1:duration=longest:dropout_transition=3 -ac 2 -ab 64k -f mp3 ./converted/' + outname
+        theCommand = 'ffmpeg.exe -i ' + filename + ' -y -filter_complex amix=inputs=1:duration=longest:dropout_transition=3 -ac 2 -ab 64k -f mp3 ./converted/' + outname
     subprocess.call(theCommand)    
 
 def main():
